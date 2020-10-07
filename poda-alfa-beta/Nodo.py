@@ -41,4 +41,7 @@ class Nodo:
     def funcion_Prueba_Git(self):
         return None
 
+    def Prueba_Git(self):
+        return None
+
 
