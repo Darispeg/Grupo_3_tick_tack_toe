@@ -1,3 +1,4 @@
+#Esta es la clase Poda-Alfa-Beta
 
 infinito = 10000
 
