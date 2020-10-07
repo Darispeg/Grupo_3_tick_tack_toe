@@ -1,3 +1,4 @@
+#Clase Tablero
 import math
 import random
 import reglas3enRaya
