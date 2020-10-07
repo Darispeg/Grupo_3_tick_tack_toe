@@ -1,7 +1,7 @@
 
 infinito = 10000
 
-# Recibe Inicial
+# Recibe Inicial...
 def Alfa_Beta(problema):#Recibe una Lista
     inicial = problema.ESTADO_INICIAL # Instaciar como la raiz del Nodo
     # problema = Nodo(inicial)
