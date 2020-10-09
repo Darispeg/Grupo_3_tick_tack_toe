@@ -1,5 +1,8 @@
 #Cambios realizados por Dennis
 #09/10/2020
+#Segundo Cambio Realizado por Dennis
+#09/10/2020
+#Cambios sin importancia
 import random
 
 class Nodo:
