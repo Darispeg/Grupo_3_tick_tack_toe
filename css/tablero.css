@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+.div-tablero {
+    background-color: aqua;
+    width: 600px;
+    height: 600px;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+}
+.div-tablero div {
+    border: solid 1px #333447;
+}
+.div-tablero div:hover {
+    background-color: red;
+}
