@@ -1,3 +1,5 @@
+#Cambios realizados por Dennis
+#09/10/2020
 import random
 
 class Nodo:
