@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tres en raya</title>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <header>
+        <h1>Tres en raya</h1>
+    </header>
+    <main>
+        <div class="div-container">
+            <div class="div-tablero">
+                <div class="div-cuadrante1"></div>
+                <div class="div-cuadrante2"></div>
+                <div class="div-cuadrante3"></div>
+                <div class="div-cuadrante4"></div>
+                <div class="div-cuadrante5"></div>
+                <div class="div-cuadrante6"></div>
+                <div class="div-cuadrante7"></div>
+                <div class="div-cuadrante8"></div>
+                <div class="div-cuadrante9"></div>
+            </div>
+            <div class="div-botones">
+                <button>volver a jugar</button>
+                <button>Boton dos</button>
+                <button>Boton tres</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="div-footer">
+            <p>Grupo Tres</p>
+            <ul>
+                <li>Juan Carlos Canedo</li>
+                <li>Dennis Arispe</li>
+                <li>Israel Gonzales</li>
+                <li>Gilmar Mamani</li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="../js/index.js"></script>
+    <!-- añadido de eventos botones -->
+    <script>
+        const $btns = document.querySelectorAll("button");
+
+        $btns.forEach((btn) => {
+            btn.addEventListener("click", function(e) {
+                e.preventDefault();
+                let x = e.clientX - e.target.offsetLeft;
+                let y = e.clientY - e.target.offsetTop + window.scrollY;
+
+                let ripples = document.createElement("span");
+                ripples.style.left = x + "px";
+                ripples.style.top = y + "px";
+                this.appendChild(ripples);
+
+                setTimeout(() => {
+                    ripples.remove();
+                }, 600);
+            });
+        });
+    </script>
+</body>
+</html>
