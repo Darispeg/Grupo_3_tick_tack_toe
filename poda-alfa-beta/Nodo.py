@@ -1,3 +1,4 @@
+#Esta es la clase nodo
 import random
 
 class Nodo:
