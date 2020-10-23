@@ -3,10 +3,9 @@ import random
 import Rules
 import Board
 import datetime
-#print(int(datetime.datetime.timestamp(datetime.datetime.now())))
-#print(time.microsecond)
+
 random.seed(int(datetime.datetime.timestamp(datetime.datetime.now())))
-#random.seed(5) 
+
 
 
 
@@ -28,7 +27,7 @@ if(numeroJugadores>0):
 else:
     numeroPartidas=Board.numero("Número de partidas a jugas [0-500]: ",0,500)
 logJugada=""
-resultados={"Ganadas":0,"Perdidas":0,"Empatadas":0}
+resultados={"Ganadas":0,"Perdidas":0,"Empates":0}
 for jugada in range(numeroPartidas):
     #Iniciamos el juego
     #if len(logJugada)>0:
