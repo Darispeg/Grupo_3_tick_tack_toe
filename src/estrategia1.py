@@ -1,5 +1,5 @@
 import random
-import reglas3enRaya
+import Rules
 
 CASILLAS_PROBAR = 3
 #Retorna una un Objeto de tipo {"casilla":, "probabilidad"}
@@ -18,7 +18,7 @@ def opciones(tablero,casillasVacias,ficha, juegaOponente,nivelMaximo=5,casillas_
     #Comprobamos que resultado tenemos con cada uno de los candidatos
     for candidato in candidatos:
         #Comprobamos si ganamos
-        if reglas3enRaya.hemosGanado(candidato,ficha,tablero):
+        if Rules.hemosGanado(candidato,ficha,tablero):
             candidatos[candidato]=1 if juegaOponente else 0
         else:
             if(nivelMaximo>0):

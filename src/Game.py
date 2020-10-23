@@ -1,7 +1,7 @@
 import math
 import random
-import reglas3enRaya
-import tablero3enRaya
+import Rules
+import Board
 import datetime
 #print(int(datetime.datetime.timestamp(datetime.datetime.now())))
 #print(time.microsecond)
@@ -11,7 +11,7 @@ random.seed(int(datetime.datetime.timestamp(datetime.datetime.now())))
 
 
 jugadores=[]
-numeroJugadores=tablero3enRaya.numero("Numero de jugadores: ",0,2)
+numeroJugadores=Board.numero("Numero de jugadores: ",0,2)
 for i in range(numeroJugadores):
     jugadores.append({"nombre":input("Nombre del jugador "+str(i+1)+": "),"tipo":"H"})
 for i in range(2-numeroJugadores):
@@ -22,11 +22,11 @@ for jugador in jugadores:
     print("\t",jugador["nombre"])
 numeroPartidas=1
 if(numeroJugadores>0):
-    empieza=tablero3enRaya.numero("¿Que jugador empieza? [1="+jugadores[0]["nombre"]+",2="+jugadores[1]["nombre"]+"]: ",1,2)
+    empieza=Board.numero("¿Que jugador empieza? [1="+jugadores[0]["nombre"]+",2="+jugadores[1]["nombre"]+"]: ",1,2)
     if(empieza==2):
         jugadores.reverse()
 else:
-    numeroPartidas=tablero3enRaya.numero("Número de partidas a jugas [0-500]: ",0,500)
+    numeroPartidas=Board.numero("Número de partidas a jugas [0-500]: ",0,500)
 logJugada=""
 resultados={"Ganadas":0,"Perdidas":0,"Empatadas":0}
 for jugada in range(numeroPartidas):
@@ -34,27 +34,27 @@ for jugada in range(numeroPartidas):
     #if len(logJugada)>0:
     #   print(logJugada)
     logJugada=""
-    tablero3enRaya.inicializar()
+    Board.inicializar()
     continuar=True
     fichasEnTablero=0
     while continuar:
         #Pedimos posición de la ficha
         if(numeroJugadores!=0):
-            tablero3enRaya.pintarTablero()
+            Board.pintarTablero()
         numJugador=(fichasEnTablero&1)
         ficha='X' if numJugador==1 else 'O'
         logJugada+="Juega "+ficha+" - "
         if(jugadores[numJugador]["tipo"]=="H"):
-            casilla=reglas3enRaya.colocarFicha(ficha)
+            casilla=Rules.colocarFicha(ficha)
         else:
-            casilla=reglas3enRaya.colocarFichaMaquina(ficha,'X' if numJugador==0 else 'O',tablero3enRaya.tablero)
+            casilla=Rules.colocarFichaMaquina(ficha,'X' if numJugador==0 else 'O',Board.tablero)
         if casilla==-1:
-            tablero3enRaya.pintarTablero()
+            Board.pintarTablero()
             continuar=False
             continue
         logJugada+="casilla "+str(casilla)+" - "
-        tablero3enRaya.casillasVacias.remove(casilla)
-        if(reglas3enRaya.hemosGanado(casilla,ficha,tablero3enRaya.tablero)):
+        Board.casillasVacias.remove(casilla)
+        if(Rules.hemosGanado(casilla,ficha,Board.tablero)):
             continuar=False
             if numeroJugadores>0:
                 print(jugadores[numJugador]["nombre"],"¡¡¡¡¡Has ganado!!!!")
@@ -73,5 +73,5 @@ for jugada in range(numeroPartidas):
             else:
                 logJugada+="Ha quedado en tablas \n"
     if numeroJugadores>0:
-        tablero3enRaya.pintarTablero()
+        Board.pintarTablero()
 print(resultados)

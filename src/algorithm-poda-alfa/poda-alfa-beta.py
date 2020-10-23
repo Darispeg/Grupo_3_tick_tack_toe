@@ -1,10 +1,8 @@
-#Esta es la clase Poda-Alfa-Beta
-
 infinito = 10000
 
 # Recibe Inicial
 def Alfa_Beta(problema):#Recibe una Lista
-    inicial = problema.ESTADO_INICIAL # Instaciar como la raiz del Nodo
+    inicial = problema.ESTADO_INICIAL # Instanciar como la raiz del Nodo
     # problema = Nodo(inicial)
     [accion,valor] = VALOR_MAX(problema,inicial,(-1)*infinito,infinito)
 
