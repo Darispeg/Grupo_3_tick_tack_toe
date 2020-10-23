@@ -1,6 +1,6 @@
 def laOpcion(tablero,casillasVacias,ficha, juegaOponente,nivelMaximo=5,casillas_probar=9, mejor=True):
     fichaOponente="X" if ficha=="O" else "O"
-    #Filas
+    # Filas
     for f in range(3):
         mia=0
         oponente=0
@@ -24,7 +24,6 @@ def laOpcion(tablero,casillasVacias,ficha, juegaOponente,nivelMaximo=5,casillas_
     for c in range(3):
         mia=0
         oponente=0
-        
         posiblesCasillas=[]
         for f in range(3):
             fila=f*3

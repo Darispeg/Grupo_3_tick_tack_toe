@@ -12,6 +12,7 @@ def inicializar():
         tablero.append(' ')
         casillasVacias.append(i)
 
+#Validando casillas de la Jugada 
 def numero(literal, inferior, superior):
     while True:
         valor=input(literal)
@@ -23,6 +24,7 @@ def numero(literal, inferior, superior):
             return coor
         else:
             print("El valor indicado es incorrecto, introduzca un número entre {0} y {1}".format(inferior,superior))
+
 
 def pintarTablero():
     pos=0

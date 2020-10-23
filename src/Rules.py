@@ -25,16 +25,16 @@ def numeroHermanos(casilla, ficha, v, h,tablero):
 
 # comprobamos que la ficha colocada en la casilla indica tiene dos fichas similares en casillas contiguas
 def hemosGanado(casilla, ficha, tablero):
-    hermanos=numeroHermanos(casilla,ficha,-1,-1,tablero)+numeroHermanos(casilla,ficha,1,1,tablero)
+    hermanos=numeroHermanos(casilla,ficha,-1,-1,tablero)+numeroHermanos(casilla,ficha,1,1,tablero) # Diagonal (\)
     if(hermanos==2):
         return True
-    hermanos=numeroHermanos(casilla,ficha,1,-1,tablero)+numeroHermanos(casilla,ficha,-1,1,tablero)
+    hermanos=numeroHermanos(casilla,ficha,1,-1,tablero)+numeroHermanos(casilla,ficha,-1,1,tablero) # Diagonal (/)
     if(hermanos==2):
         return True
-    hermanos=numeroHermanos(casilla,ficha,-1,0,tablero)+numeroHermanos(casilla,ficha,1,0,tablero)
+    hermanos=numeroHermanos(casilla,ficha,-1,0,tablero)+numeroHermanos(casilla,ficha,1,0,tablero) # Filas
     if(hermanos==2):
         return True
-    hermanos=numeroHermanos(casilla,ficha,0,-1,tablero)+numeroHermanos(casilla,ficha,0,1,tablero)
+    hermanos=numeroHermanos(casilla,ficha,0,-1,tablero)+numeroHermanos(casilla,ficha,0,1,tablero) # Columnas
     if(hermanos==2):
         return True
 
