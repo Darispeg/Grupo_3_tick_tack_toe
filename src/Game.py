@@ -66,7 +66,7 @@ for jugada in range(numeroPartidas):
         fichasEnTablero+=1
         if(fichasEnTablero==9 and continuar):
             continuar=False
-            resultados["Empatadas"]=resultados["Empatadas"]+1
+            resultados["Empates"]=resultados["Empates"]+1
             if numeroJugadores>0:
                 print("TABLAS")
             else:
