@@ -38,19 +38,14 @@ def hemosGanado(casilla, ficha, tablero):
     if(hermanos==2):
         return True
 
-def colocarFicha(ficha):
-    print("Dame la posición de una ficha")
-    while True:
-        fila=Board.numero("Fila entre [1 y 3]: ", 1,3)-1 #Restamos uno ya que nuestro rango real está entre 0 y 2
-        columna=Board.numero("Columna entre [1 y 3]: ",1,3)-1
-        #Como mi tablero es de 3x3
-        casilla=fila*Board.TABLERO_COLUMNAS+columna
-        if(Board.tablero[casilla]!=' '):
-            #Esa casilla ya está cubierta
-            print("La casilla está ocupada")
-        else:
-            Board.tablero[casilla]=ficha
-            return casilla
+def colocarFicha(ficha, fila, columna):
+    casilla=fila*Board.TABLERO_COLUMNAS+columna
+    if(Board.tablero[casilla]!=' '):
+        #Esa casilla ya está cubierta
+        print("La casilla está ocupada")
+    else:
+        Board.tablero[casilla]=ficha
+        return casilla
 
 
 
@@ -77,7 +72,7 @@ def colocarFichaMaquina(ficha, fichaContrincante, tablero):
             else:
                 print("No nos hemos dado cuenta de que nos podían ganar")
     # Algoritmos de Decision
-    if ficha =="X":
+    if ficha =="O":
         mejorOpcion=estrategia2.laOpcion(tablero, Board.casillasVacias, ficha, False)
     else:
         mejorOpcion=estrategia1.laOpcion(tablero, Board.casillasVacias, ficha, False)
